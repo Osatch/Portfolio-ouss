@@ -41,7 +41,7 @@
 	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
 	          <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
-	          <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
+	         <!-- <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>-->
 	          
 	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 	        </ul>
@@ -414,7 +414,7 @@
     	</div>
     </section>
  
-
+<!--
     <section class="ftco-section ftco-project" id="projects-section">
     	<div class="container-fluid px-md-0">
     		<div class="row no-gutters justify-content-center pb-5">
@@ -516,7 +516,7 @@
       </div>
     </section>
 
-
+-->
     
 
     <section class="ftco-section ftco-hireme img" style="background-image: url(images/bg_1.jpg)">
@@ -647,7 +647,7 @@
                 <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
                 <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
                 <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Services</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Projects</a></li>
+                <!--<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Projects</a></li>-->
                 <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
               </ul>
             </div>
@@ -694,38 +694,31 @@
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
   <script>
-	// Initialiser EmailJS avec ton User ID
-	emailjs.init("FgqNWOraCAH8Kmhyj");
+	// Script AJAX pour envoyer le formulaire sans recharger la page
+	document.getElementById("contactForm").addEventListener("submit", function(event) {
+		event.preventDefault();
 	
-	// Écouter l'événement de soumission du formulaire
-	document.getElementById('contactForm').addEventListener('submit', function(event) {
-		event.preventDefault(); // Empêcher le rechargement de la page
+		// Création de l'objet FormData avec les données du formulaire
+		var formData = new FormData(this);
 	
-		// Récupérer les valeurs des champs du formulaire
-		const name = document.getElementById('name').value;
-		const email = document.getElementById('email').value;
-		const subject = document.getElementById('subject').value;
-		const message = document.getElementById('message').value;
-	
-		// Paramètres du modèle d'e-mail
-		const templateParams = {
-			name: name,
-			email: email,
-			subject: subject,
-			message: message,
-		};
-	
-		// Envoyer l'e-mail via EmailJS
-		emailjs.send('service_pb69vbj', 'template_d2v7rcf', templateParams)
-			.then(function(response) {
-				// Afficher un message de succès
-				document.getElementById('responseMessage').innerText = 'Message envoyé avec succès!';
-				console.log('Message envoyé avec succès!', response.status, response.text);
-			}, function(error) {
-				// Afficher un message d'erreur
-				document.getElementById('responseMessage').innerText = 'Erreur lors de l\'envoi du message.';
-				console.error('Erreur lors de l\'envoi du message:', error);
-			});
+		// Envoi de la requête AJAX
+		fetch("send_email.php", {
+			method: "POST",
+			body: formData
+		})
+		.then(response => response.json())
+		.then(data => {
+			const responseMessage = document.getElementById("responseMessage");
+			responseMessage.textContent = data.message;
+			responseMessage.className = data.status === "success" ? "success" : "error";
+			if (data.status === "success") {
+				document.getElementById("contactForm").reset(); // Réinitialise le formulaire en cas de succès
+			}
+		})
+		.catch(error => {
+			document.getElementById("responseMessage").textContent = "Erreur lors de l'envoi. Veuillez réessayer.voila";
+			document.getElementById("responseMessage").className = "error";
+		});
 	});
 	</script>
   <script src="js/jquery.min.js"></script>
