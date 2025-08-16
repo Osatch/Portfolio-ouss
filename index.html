@@ -1,515 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>BOUMEDJMADJENE Oussama</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Oussama Boumedjmâdjène — Développeur Full-Stack (Django • Vue.js)</title>
+  <meta name="description" content="Portfolio moderne, épuré et animé. Développeur full-stack Django/Vue.js : temps réel, APIs REST, WebSocket, déploiement Linux/Nginx, automatisation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','-apple-system','Segoe UI','Roboto','Ubuntu','Cantarell','Noto Sans','Helvetica Neue','Arial','Apple Color Emoji','Segoe UI Emoji'] },
+        extend: {
+          colors: {
+            brand: {
+              50:'#eef9ff',100:'#d6f0ff',200:'#b0e0ff',300:'#7ecbff',400:'#49b0ff',
+              500:'#1f96ff',600:'#0c7ae6',700:'#065fb8',800:'#084e90',900:'#0a4276'
+            }
+          },
+          boxShadow: {
+            glow: '0 8px 40px rgba(31,150,255,.25)'
+          },
+          keyframes: {
+            floaty:{'0%,100%':{transform:'translateY(0)'},'50%':{transform:'translateY(-6px)'}},
+            fadeUp:{'0%':{opacity:0,transform:'translateY(24px)'},'100%':{opacity:1,transform:'translateY(0)'}}
+          },
+          animation: {
+            floaty:'floaty 6s ease-in-out infinite',
+            fadeUp:'fadeUp .7s both'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .reveal {opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+    .reveal.on {opacity:1; transform:translateY(0);}
+    .glass {backdrop-filter: saturate(140%) blur(10px); background: rgba(255,255,255,.65);}
+    .dark .glass {background: rgba(13,18,28,.45);}
+    .mask-gradient {mask-image: radial-gradient(1200px 600px at 50% 0%, #000 40%, transparent 100%);}
+  </style>
+</head>
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+<body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 selection:bg-brand-500/20 selection:text-brand-700">
 
-    <link rel="stylesheet" href="css/aos.css">
+  <!-- ====== AJOUT MULTILINGUE : BOUTON FLOTTANT (NE RETIRE RIEN) ====== -->
+  <div id="langSwitcher" class="fixed z-50 right-4 top-4">
+    <button id="langToggle" class="px-3 py-1 rounded-lg bg-brand-600 text-white hover:bg-brand-700 text-sm">EN</button>
+  </div>
+  <!-- ====== FIN AJOUT ====== -->
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-	<link rel="icon" href="images/Bicon.ico" sizes="16x16" type="image/x-icon">
-	<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	  
-	  
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html"><span>B.</span>Oussama</a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-	         
-	         <!-- <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>-->
-	          
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
-			
-	      </div>
-	    </div>
-	  </nav>
-	  <section class="hero-wrap js-fullheight">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
-          <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
-          	<div class="text text-center">
-          		<span class="subheading">Hey! I am</span>
-		  				<h1>Oussama</h1>
-			  				<h2>I'm a 
-								  <span
-								     class="txt-rotate"
-								     data-period="2000"
-								     data-rotate='[ "Web Designer.", "Developer.", "Designer.", "Marketer." ]'></span>
-								</h2>
-							</div>
-            </div>
-          </div>
+  <header class="sticky top-0 z-40 border-b border-slate-200/60 dark:border-slate-800/80 bg-white/80 dark:bg-slate-950/60 glass">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="h-16 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-3">
+          <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-brand-500 to-brand-300 shadow-glow"></div>
+          <span class="font-extrabold tracking-tight text-lg">Oussama<span class="text-brand-600">.dev</span></span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6">
+          <a href="#accueil" class="hover:text-brand-600">Accueil</a>
+          <a href="#apropos" class="hover:text-brand-600">À propos</a>
+          <a href="#competences" class="hover:text-brand-600">Compétences</a>
+          <a href="#projets" class="hover:text-brand-600">Projets</a>
+          <a href="#experience" class="hover:text-brand-600">Expérience</a>
+          <a href="#contact" class="px-4 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-700">Contact</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="themeToggle" aria-label="Basculer thème" class="h-10 w-10 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 grid place-items-center">
+            <svg id="sun" class="h-5 w-5 hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.79 1.8-1.79zM1 13h3v-2H1v2zm10 10h2v-3h-2v3zM4.84 17.24l-1.79 1.8 1.79 1.79 1.8-1.79-1.8-1.8zM20 11V9h-3v2h3zm-8-8h-2v3h2V3zm7.16 2.84l-1.79-1.79-1.8 1.79 1.8 1.79 1.79-1.79zM12 6a6 6 0 100 12 6 6 0 000-12zm6.76 10.48l1.8 1.79-1.8 1.8-1.79-1.8 1.79-1.79z"/></svg>
+            <svg id="moon" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/></svg>
+          </button>
+          <button id="menuBtn" class="md:hidden h-10 w-10 rounded-lg border border-slate-200 dark:border-slate-800 grid place-items-center">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+          </button>
         </div>
       </div>
-      <div class="mouse">
-				<a href="#about-section" class="mouse-icon">
-					<div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
-				</a>
-			</div>
-    </section>
-
-    <section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
-    	<div class="container">
-    		<div class="row d-flex no-gutters">
-    			<div class="col-md-6 col-lg-6 d-flex">
-    				<div class="img-about img d-flex align-items-stretch">
-    					<div class="overlay"></div>
-	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/imgcv.PNG);">
-	    				</div>
-    				</div>
-    			</div>
-    			<div class="col-md-6 col-lg-6 pl-md-5 py-5">
-    				<div class="row justify-content-start pb-3">
-		          <div class="col-md-12 heading-section ftco-animate">
-		          	<h1 class="big">About</h1>
-		            <h2 class="mb-4">About Me</h2>
-		            <p>Hi, I'm Osama, a passionate junior developer with a strong focus on programming and software architecture. I love designing innovative solutions and building scalable software systems. My goal is to bring creative ideas to life through clean and efficient code, constantly learning and evolving with the 
-						latest technologies. Let's build something amazing together!.</p>
-		            <ul class="about-info mt-4 px-md-0 px-2">
-		            	<li class="d-flex"><span>Name:</span> <span>BOUMEDJMADJENE Oussama</span></li>
-		            	<li class="d-flex"><span>Age:</span> <span>28</span></li>
-		            	<li class="d-flex"><span>Address:</span> <span>BEJAIA , 06000 ALGERIA</span></li>
-		            
-		            	<li class="d-flex"><span>Email:</span> <span>oussama4448@gmail.com</span></li>
-		            	<li class="d-flex"><span>Phone: </span> <span>+213790700518</span></li>
-		            </ul>
-		          </div>
-		        </div>
-	          <div class="counter-wrap ftco-animate d-flex mt-md-3">
-              <div class="text">
-              	<p class="mb-4">
-	                <span class="number" data-number="20">0</span>
-	                <span>Project complete</span>
-                </p>
-                <p><a href="PDF\CV1.pdf" class="btn btn-primary py-3 px-3">Download my CV</a></p>
-              </div>
-	          </div>
-	        </div>
+      <div id="mobileNav" class="md:hidden hidden pb-4">
+        <div class="grid gap-2">
+          <a href="#accueil" class="px-4 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-900">Accueil</a>
+          <a href="#apropos" class="px-4 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-900">À propos</a>
+          <a href="#competences" class="px-4 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-900">Compétences</a>
+          <a href="#projets" class="px-4 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-900">Projets</a>
+          <a href="#experience" class="px-4 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-900">Expérience</a>
+          <a href="#contact" class="px-4 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-700">Contact</a>
         </div>
-    	</div>
-    </section>
+      </div>
+    </div>
+  </header>
 
-    
-
-
-    <section class="ftco-section ftco-no-pb goto-here" id="resume-section">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-md-3">
-				    <nav id="navi">
-					    <ul>
-					      <li><a href="#page-1">Education</a></li>
-					      <li><a href="#page-2">Experience</a></li>
-					      
-					      <li><a href="#page-4">My Skills</a></li>
-					    </ul>
-					  </nav>
-					</div>
-					<div class="col-md-9">
-					  <div id="page-1" class= "page one">
-					  	<h2 class="heading">Education</h2>
-					    
-	    				<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">2016-2019</span>
-		    					<h2>License in information systems</h2>
-		    					<span class="position">Abderrahmane-Mira University of Bejaia</span>
-								<p>in 2019 I obtained a bachelor's degree in information systems.</p>
-		    					
-		    				</div>
-	    				</div>
-	    				<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">2019-2022</span>
-		    					<h2>Master in Software Engineering</h2>
-		    					<span class="position">Abderrahmane-Mira University of Bejaia</span><p>in 2022 I obtained a master's degree in software engineering.</p>
-		    				</div>
-	    				</div>
-		    					
-	    				
-					  </div>
-
-					  <div id="page-2" class= "page two">
-					  	<h2 class="heading">Experience</h2>
-					    <div class="resume-wrap d-flex ftco-animate">
-					    	<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">SEPT 2022- JAN 2023</span>
-		    					<h2>Teleprospecting agent (Call center) </h2>
-		    					<span class="position">ExcelGP</span>
-		    					<p>I worked for four months at Excel GP in a call center environment, where I developed strong communication skills, learned to manage customer inquiries efficiently, and provided effective solutions. This experience enhanced my ability to work under pressure and collaborate within a team.</p>
-		    				</div>
-	    				</div>
-	    				<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">FEB 2023- JUN 2023</span>
-		    					<h2>Crypto Trader</h2>
-		    					<span class="position">Cambridge University</span>
-		    					<p>I started a self-taught training in crypto trading</p>
-		    				</div>
-	    				</div>
-	    				<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">JUN 2023 -SEPT 2023</span>
-		    					<h2>Web Developer</h2>
-		    					<span class="position">freelance</span>
-		    					<p>As a freelance web developer, I have worked with a variety of technologies, including Laravel, React.js, WordPress, and Shopify. I’ve built custom web applications, designed user-friendly websites, and provided scalable e-commerce solutions. My experience spans across full-stack development, ensuring that each project meets client needs and industry standards</p>
-		    				</div>
-	    				</div>
-	    				<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">SEPT 2023- SEPT 2024 </span>
-		    					<h2>IT Consultant - Military Service</h2>
-		    					<span class="position">Higher School of Signal - Kolea</span>
-		    					<p>Platform for the management of the school personel and documents whit odoo.</p>
-		    				</div>
-	    				</div>
-	    				
-	    				
-					  </div>
-					  
-					  <div id="page-4" class= "page four">
-					    <h2 class="heading">My Skills</h2>
-					    <div class="resume-wrap d-flex ftco-animate">
-					    	<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					
-		    					<h2>Web Development</h2>
-		    					<ul>
-									<li>Laravel</li>
-									<li>Odoo</li>
-									<li>JavaScript (Node.js)</li>
-									<li>React.js</li>
-									<li>NextJs beginner</Li>
-								</ul>
-	    					</div>
-	    				</div>
-						<div class="resume-wrap d-flex ftco-animate">
-					    	<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					
-		    					<h2>Software Development</h2>
-								<ul>
-									<li>java spring boot (beginner)</li>
-								
-								</ul>
-		    					
-		    					
-	    					</div>
-
-	    				</div>
-						<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					
-		    					<h2>Web Designe</h2>
-								<ul>
-									<li>Figma</li>
-									<li>Adobe Dreamweaver</li>
-									<li>Adobe photoshop</li>
-									<li>Blender</li>
-								</ul>
-		    					
-		    					
-		    				</div>
-	    				</div>
-
-
-
-						
-	    				<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					
-		    					<h2>Database</h2>
-		    					
-		    					<ul>
-									<li>MySQL</li>
-									<li>Postgresql</li>
-									<li>SQLite</li>
-									
-								</ul>
-		    				</div>
-	    				</div>
-	    				<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    				
-		    					<h2>Dev Ops</h2>
-		    					
-		    					<ul>
-									<li>Git</li>
-								
-									<li>GitHub / GitLab</li>
-								</ul>
-		    				</div>
-	    				</div>
-	    				<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					
-		    					<h2>Machine Learning</h2>
-		    					
-		    					<ul>
-									<li>GeoMesa SparQL</li>
-							
-								</ul>
-		    				</div>
-	    				</div>
-						<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					
-		    					<h2>Tools</h2>
-		    					
-		    					<ul>
-									<li>Postman</li>
-									
-									
-								</ul>
-		    				</div>
-	    				</div>
-						
-					  </div>
-					</div>
-			  </div>
-    	</div>
-    </section>
-
-   <!-- <section class="ftco-section" id="services-section">
-    	<div class="container-fluid px-md-5">
-    		<div class="row justify-content-center py-5 mt-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Services</h1>
-            <h2 class="mb-4">Services</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-          </div>
-        </div>
-    		<div class="row">
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1 shadow">
-							<span class="icon">
-								<i class="flaticon-analysis"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Web Design</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1 shadow">
-							<span class="icon">
-								<i class="flaticon-flasks"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Phtography</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1 shadow">
-							<span class="icon">
-								<i class="flaticon-ideas"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Web Developer</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1 shadow">
-							<span class="icon">
-								<i class="flaticon-innovation"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">App Developing</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1 shadow">
-							<span class="icon">
-								<i class="flaticon-ux-design"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Branding</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1 shadow">
-							<span class="icon">
-								<i class="flaticon-idea"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Product Strategy</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-							</div>
-						</a>
-					</div>
-				</div>
-    	</div>
-    </section>-->
- 
-<!--
-    <section class="ftco-section ftco-project" id="projects-section">
-    	<div class="container-fluid px-md-0">
-    		<div class="row no-gutters justify-content-center pb-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">My Projects</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-          </div>
-        </div>
-    		<div class="row no-gutters">
-    			<div class="col-md-4">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/work-1.jpg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-	    					<span>Web Design</span>
-	    				</div>
-    				</div>
-  				</div>
-  				<div class="col-md-4">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/work-2.jpg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-	    					<span>Web Design</span>
-	    				</div>
-    				</div>
-  				</div>
-
-    			<div class="col-md-4">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/work-3.jpg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-	    					<span>Web Design</span>
-	    				</div>
-    				</div>
-    			</div>
-    			<div class="col-md-4">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/work-4.jpg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-	    					<span>Web Design</span>
-	    				</div>
-    				</div>
-    			</div>
-    			<div class="col-md-4">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/work-5.jpg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-	    					<span>Web Design</span>
-	    				</div>
-    				</div>
-    			</div>
-    			<div class="col-md-4">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/work-6.jpg);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="#">Branding &amp; Illustration Design</a></h3>
-	    					<span>Web Design</span>
-	    				</div>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    </section>
-
-    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-    	<div class="container-fluid px-md-5">
-				<div class="row d-md-flex align-items-center">
-          
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 shadow">
-              <div class="text">
-                <strong class="number" data-number="20">0</strong>
-                <span>Complete Projects</span>
-              </div>
+  <main>
+    <section id="accueil" class="relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none mask-gradient">
+        <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-[1200px] h-[1200px] rounded-full bg-gradient-to-b from-brand-500/20 to-transparent blur-3xl"></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-28">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="reveal on lg:reveal">
+            <p class="uppercase tracking-widest text-sm text-brand-700/80">Développeur Full-Stack</p>
+            <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight mt-3">Oussama Boumedjmâdjène</h1>
+            <p class="mt-6 text-lg text-slate-600 dark:text-slate-300 max-w-2xl">
+              Spécialisé en Python/Django, Vue.js, systèmes temps réel (WebSocket/Redis), APIs REST, automatisation, et déploiement Linux/Nginx.
+              Conception d’ERP Web & Mobile modulaires pour l’activité fibre optique particuliers.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="#projets" class="px-5 py-3 rounded-xl bg-brand-600 text-white hover:bg-brand-700 shadow-glow">Voir les projets</a>
+              <a href="#contact" class="px-5 py-3 rounded-xl border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-900">Me contacter</a>
+            </div>
+            <div class="mt-8 flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+              <span>📧 oussama4448@gmail.com</span>
+              <span>📱 +213 790 70 05 18</span>
+              <a href="https://www.linkedin.com/in/oussama-boumedjmadjene-837b8724b/" target="_blank" class="underline underline-offset-4 decoration-brand-500 hover:text-brand-600">LinkedIn</a>
+              <a href="https://github.com/Osatch" target="_blank" class="underline underline-offset-4 decoration-brand-500 hover:text-brand-600">GitHub</a>
             </div>
           </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 shadow">
-              <div class="text">
-                <strong class="number" data-number="20">0</strong>
-                <span>Happy Customers</span>
+          <div class="relative">
+            <div class="aspect-square bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-800 rounded-3xl border border-slate-200/70 dark:border-slate-800/90 overflow-hidden shadow-2xl">
+              <div class="absolute inset-0 grid place-items-center">
+                <div class="w-64 h-64 rounded-full bg-gradient-to-tr from-brand-500 to-brand-300 animate-floaty"></div>
               </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 shadow">
-              <div class="text">
-                <strong class="number" data-number="+1000">0</strong>
-                <span>Cups of coffee</span>
+              <div class="absolute bottom-6 left-6 right-6 grid grid-cols-3 gap-3">
+                <div class="p-3 rounded-xl bg-white/80 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 backdrop-blur-md text-xs">Django • DRF • JWT</div>
+                <div class="p-3 rounded-xl bg-white/80 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 backdrop-blur-md text-xs">Vue.js • Vite • Axios</div>
+                <div class="p-3 rounded-xl bg-white/80 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 backdrop-blur-md text-xs">WebSocket • Redis • Nginx</div>
               </div>
             </div>
           </div>
@@ -517,226 +132,453 @@
       </div>
     </section>
 
--->
-    
-
-    <section class="ftco-section ftco-hireme img" style="background-image: url(images/bg_1.jpg)">
-    	<div class="overlay"></div>
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-md-7 ftco-animate text-center">
-						<h2>I'm <span>Available</span> for freelancing</h2>
-						<p>Hello! I’m currently available for freelance work and open to new projects. With experience in web development and a strong background in technologies like Laravel, React.js, WordPress, and Shopify, I’m ready to help bring your ideas to life. Whether you need a website, a custom web application, or help with an ongoing project, feel free to reach out. Let’s create something great together!</p>
-						<p class="mb-0"><a href="#contact-me" class="btn btn-primary py-3 px-5">Hire me</a></p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>if you want to contact me go to the contacts section, if not here are my main contacts</p>
+    <section id="apropos" class="py-20 lg:py-28">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl font-extrabold">À propos</h2>
+        <p class="mt-5 text-slate-600 dark:text-slate-300 leading-relaxed reveal">
+          Développeur full-stack orienté résultats, je construis des produits fiables et performants. Je travaille sur des architectures pragmatiques,
+          des interfaces claires, et des pipelines de données robustes. Mon focus : valeur métier, qualité, maintenabilité, temps réel, et déploiements propres.
+        </p>
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-950/50 reveal">
+            <div class="text-sm text-slate-500">Spécialité</div>
+            <div class="mt-1 font-semibold">Django • Vue.js</div>
+          </div>
+          <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-950/50 reveal">
+            <div class="text-sm text-slate-500">Temps réel</div>
+            <div class="mt-1 font-semibold">Channels • WebSocket • Redis</div>
+          </div>
+          <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-950/50 reveal">
+            <div class="text-sm text-slate-500">Automatisation</div>
+            <div class="mt-1 font-semibold">Selenium • CSV/Excel</div>
+          </div>
+          <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-950/50 reveal">
+            <div class="text-sm text-slate-500">Infra</div>
+            <div class="mt-1 font-semibold">Ubuntu • Nginx • SSL</div>
           </div>
         </div>
-
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box text-center p-4 shadow">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
-          		</div>
-          		<div>
-	          		<h3 class="mb-4">Address</h3>
-		            <p>BEJAIA 06000 , ALGERIA</p>
-		          </div>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box text-center p-4 shadow">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-phone2"></span>
-          		</div>
-          		<div>
-	          		<h3 class="mb-4">Contact Number</h3>
-		            <p><a href="tel:+213790700518">+213790700518</a><br>
-					    <a href="+213559948476">+213559948476</a></p>
-	            </div>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box text-center p-4 shadow">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-paper-plane"></span>
-          		</div>
-          		<div>
-	          		<h3 class="mb-4">Email Address</h3>
-		            <p><a href="oussama4448@gmail.com">oussama4448@gmail.com</a></p>
-		          </div>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box text-center p-4 shadow">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-github-square"></span>
-
-          		</div>
-          		<div>
-	          		<h3 class="mb-4">Github</h3>
-		            <p><a href="https://github.com/Osatch">Some work</a></p>
-	            </div>
-	          </div>
-          </div>
-        </div>
-
-        <div class="row no-gutters block-9" id="contact-me">
-			<div class="col-md-6 order-md-last d-flex">
-				<form id="contactForm" class="bg-light p-4 p-md-5 contact-form">
-					<div class="form-group">
-						<input type="text" class="form-control" id="name" placeholder="name" required>
-					</div>
-					<div class="form-group">
-						<input type="email" class="form-control" id="email" placeholder="email" required>
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control" id="subject" placeholder="subject" required>
-					</div>
-					<div class="form-group">
-						<textarea id="message" cols="30" rows="7" class="form-control" placeholder="message" required></textarea>
-					</div>
-					<div class="form-group">
-						<input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-					</div>
-				</form>
-				<div id="responseMessage"></div>
-			</div>
-
-
-
-          <div class="col-md-6 d-flex">
-          	<div class="img" style="background-image: url(images/imgcv.PNG);"></div>
-          </div>
-        </div>
-		
       </div>
     </section>
-		
 
-    <footer class="ftco-footer ftco-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">About</h2>
-              <p>Far far awLooking to collaborate or need help with a project? Feel free to reach out! I'm available for both freelance work and full-time opportunities. Let’s discuss how we can bring your ideas to life.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="https://x.com/El_lioneouss"><span class="icon-twitter"></span></a></li>
-				<li class="ftco-animate"><a href="https://www.linkedin.com/in/oussama-boumedjmadjene-837b8724b/"><span class="icon-linkedin-square"></span></a></li>
-                <li class="ftco-animate"><a href="https://www.facebook.com/profile.php?id=100009048773189"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="https://www.instagram.com/im_osaama/?hl=en"><span class="icon-instagram"></span></a></li>
-				<li class="ftco-animate"><a href="https://github.com/Osatch"><span class="icon-github-square"></span></a></li>
-				<li class="ftco-animate"><a href="https://gitlab.com/oussama4448"><span class="icon-gitlab"></span></a></li>
-              </ul>
-            </div>
+    <section id="competences" class="py-20 lg:py-28 bg-slate-50 dark:bg-slate-900">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex items-end justify-between gap-6">
+          <h2 class="text-3xl font-extrabold">Compétences</h2>
+          <div class="text-sm text-slate-500 dark:text-slate-400">Mises à jour en continu</div>
+        </div>
+        <div class="mt-10 grid md:grid-cols-3 gap-8">
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 reveal">
+            <div class="font-bold text-lg">Back-end</div>
+            <ul class="mt-4 space-y-2 text-slate-600 dark:text-slate-300">
+              <li>Django, DRF, Auth JWT/Refresh, RBAC</li>
+              <li>Channels, WebSocket, Redis</li>
+              <li>MySQL/MariaDB, optimisation requêtes</li>
+              <li>Imports CSV/Excel, e-mail texte + PJ</li>
+            </ul>
           </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Links</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
-                <li><a href="#about-section"><span class="icon-long-arrow-right mr-2"></span>About Me</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Services</a></li>
-                <!--<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Projects</a></li>-->
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
-              </ul>
-            </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 reveal">
+            <div class="font-bold text-lg">Front-end</div>
+            <ul class="mt-4 space-y-2 text-slate-600 dark:text-slate-300">
+              <li>Vue.js (Options/Composition), Vite</li>
+              <li>Interfaces de tableaux riches</li>
+              <li>Filtres, pagination, modales d’édition</li>
+              <li>WebSocket client, états temps réel</li>
+            </ul>
           </div>
-          <!--<div class="col-md">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Services</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Design</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Development</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Business Strategy</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Data Analysis</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Graphic Design</a></li>
-              </ul>
-            </div>
-          </div>-->
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">BEJAIA 06000 ALGERIA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+213790700518</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">oussama4448@gmail.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 reveal">
+            <div class="font-bold text-lg">Ops & Automatisation</div>
+            <ul class="mt-4 space-y-2 text-slate-600 dark:text-slate-300">
+              <li>Ubuntu/Nginx, Uvicorn/Gunicorn, SSL</li>
+              <li>Selenium WebDriver, Regex</li>
+              <li>Monitoring simple, scripts de maintenance</li>
+              <li>CI légères, bonnes pratiques sécurité</li>
+            </ul>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
+        <div class="mt-10">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm reveal">Django</div>
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm reveal">DRF</div>
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm reveal">Channels</div>
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm reveal">Vue.js</div>
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm reveal">Vite</div>
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm reveal">Redis</div>
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm reveal">MySQL</div>
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm reveal">Nginx</div>
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm reveal">Selenium</div>
+        </div>
+      </div>
+    </section>
 
-           
+    <section id="projets" class="py-20 lg:py-28">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex items-end justify-between">
+          <h2 class="text-3xl font-extrabold">Projets</h2>
+          <div class="flex gap-2">
+            <button data-filter="all" class="px-4 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-900">Tous</button>
+            <button data-filter="web" class="px-4 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-900">Web</button>
+            <button data-filter="realtime" class="px-4 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-900">Temps réel</button>
+          </div>
+        </div>
+
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article class="group rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition reveal" data-tags="web,realtime">
+            <div class="relative">
+              <div class="aspect-[16/10] bg-gradient-to-br from-brand-500/15 to-slate-200 dark:to-slate-800 grid place-items-center">
+                <span class="text-sm text-brand-700">ERP Web & Mobile (fibre)</span>
+              </div>
+              <div class="absolute top-3 left-3 px-2 py-1 text-xs rounded-md bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800">Django • Vue</div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold group-hover:text-brand-600">Système ERP temps réel</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Gestion interventions, suivi terrain, facturation, recrutement, inventaire, échanges live.</p>
+              <div class="mt-4 flex gap-2">
+                <span class="px-2 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800">WebSocket</span>
+                <span class="px-2 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800">Redis</span>
+                <span class="px-2 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800">Nginx</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="group rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition reveal" data-tags="web">
+            <div class="relative">
+              <div class="aspect-[16/10] bg-gradient-to-br from-emerald-500/15 to-slate-200 dark:to-slate-800 grid place-items-center">
+                <span class="text-sm text-emerald-700">Stats & tableaux</span>
+              </div>
+              <div class="absolute top-3 left-3 px-2 py-1 text-xs rounded-md bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800">Vue</div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold group-hover:text-emerald-600">Dashboards comparatifs</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">OK vs NOK, catégories d’échec, exports Excel avec formats/couleurs.</p>
+              <div class="mt-4 flex gap-2">
+                <span class="px-2 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800">Excel</span>
+                <span class="px-2 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800">Pagination</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="group rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition reveal" data-tags="web">
+            <div class="relative">
+              <div class="aspect-[16/10] bg-gradient-to-br from-fuchsia-500/15 to-slate-200 dark:to-slate-800 grid place-items-center">
+                <span class="text-sm text-fuchsia-700">Scraping</span>
+              </div>
+              <div class="absolute top-3 left-3 px-2 py-1 text-xs rounded-md bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800">Python</div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold group-hover:text-fuchsia-600">Collecte Selenium</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Filtres numéros 06/07, tous départements, export Excel structuré.</p>
+              <div class="mt-4 flex gap-2">
+                <span class="px-2 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800">Selenium</span>
+                <span class="px-2 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800">Regex</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="py-20 lg:py-28 bg-slate-50 dark:bg-slate-900">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl font-extrabold">Expérience</h2>
+        <div class="mt-10 space-y-8">
+          <div class="reveal">
+            <div class="flex items-center justify-between">
+              <div class="font-bold">Candle Call — Développeur logiciels</div>
+              <div class="text-sm text-slate-500">mars 2025 – aujourd’hui</div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-300 mt-2">Développement d’un ERP Web & Mobile modulaire en temps réel (fibre optique particuliers) : interventions, terrain, facturation, recrutement, inventaire, échanges live.</p>
+          </div>
+          <div class="reveal">
+            <div class="flex items-center justify-between">
+              <div class="font-bold">ubc — Freelance</div>
+              <div class="text-sm text-slate-500">oct. 2024 – fév. 2025</div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-300 mt-2">Scraping Selenium, filtrage numéros 06/07, export Excel (colonne Département).</p>
+          </div>
+          <div class="reveal">
+            <div class="flex items-center justify-between">
+              <div class="font-bold">École Supérieure des Transmissions 1RN</div>
+              <div class="text-sm text-slate-500">janv. 2023 – sept. 2024</div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-300 mt-2">Service national : intégration Odoo, automatisations.</p>
+          </div>
+          <div class="reveal">
+            <div class="flex items-center justify-between">
+              <div class="font-bold">SGS Béjaïa</div>
+              <div class="text-sm text-slate-500">juil. 2022 – sept. 2023</div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-300 mt-2">Outils internes, maintenance, automatisations.</p>
           </div>
         </div>
       </div>
-    </footer>
-    
-  
+    </section>
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+    <section id="contact" class="py-20 lg:py-28">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl font-extrabold">Contact</h2>
+        <p class="mt-4 text-slate-600 dark:text-slate-300">Réponse rapide. Tous les champs sont requis.</p>
+        <form id="contactForm" class="mt-10 grid gap-5">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm mb-2">Nom</label>
+              <input name="name" type="text" required class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-brand-500" />
+            </div>
+            <div>
+              <label class="block text-sm mb-2">E-mail</label>
+              <input name="email" type="email" required class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-brand-500" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm mb-2">Sujet</label>
+            <input name="subject" type="text" required class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-brand-500" />
+          </div>
+          <div>
+            <label class="block text-sm mb-2">Message</label>
+            <textarea name="message" rows="6" required class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+          </div>
+          <div class="flex items-center gap-3">
+            <button type="submit" class="px-6 py-3 rounded-xl bg-brand-600 text-white hover:bg-brand-700 disabled:opacity-50" id="sendBtn">Envoyer</button>
+            <a id="mailtoFallback" class="text-sm underline underline-offset-4 decoration-brand-500 hidden">Ou envoyer via votre boîte mail</a>
+          </div>
+          <div id="toast" class="hidden mt-4 text-sm px-4 py-3 rounded-xl"></div>
+        </form>
+        <div class="mt-10 text-sm text-slate-500 dark:text-slate-400">
+          E-mail direct : <a href="mailto:oussama4448@gmail.com" class="underline decoration-brand-500">oussama4448@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-sm text-slate-500 dark:text-slate-400">© <span id="year"></span> Oussama Boumedjmâdjène. Tous droits réservés.</div>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="https://www.linkedin.com/in/oussama-boumedjmadjene-837b8724b/" target="_blank" class="hover:text-brand-600">LinkedIn</a>
+        <a href="https://github.com/Osatch" target="_blank" class="hover:text-brand-600">GitHub</a>
+        <a href="#contact" class="hover:text-brand-600">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <!-- ====== AJOUT MULTILINGUE : SCRIPT DE TRADUCTION (NE RETIRE RIEN) ====== -->
+  <script>
+    (function(){
+      const frToEn = new Map([
+        ["Oussama Boumedjmâdjène — Développeur Full-Stack (Django • Vue.js)", "Oussama Boumedjmâdjène — Full-Stack Developer (Django • Vue.js)"],
+        ["Portfolio moderne, épuré et animé. Développeur full-stack Django/Vue.js : temps réel, APIs REST, WebSocket, déploiement Linux/Nginx, automatisation.", "Modern, clean and animated portfolio. Full-stack Django/Vue.js developer: real-time, REST APIs, WebSocket, Linux/Nginx deployment, automation."],
+        ["Accueil","Home"],
+        ["À propos","About"],
+        ["Compétences","Skills"],
+        ["Projets","Projects"],
+        ["Expérience","Experience"],
+        ["Contact","Contact"],
+        ["Développeur Full-Stack","Full-Stack Developer"],
+        ["Spécialisé en Python/Django, Vue.js, systèmes temps réel (WebSocket/Redis), APIs REST, automatisation, et déploiement Linux/Nginx.\n              Conception d’ERP Web & Mobile modulaires pour l’activité fibre optique particuliers.","Specialized in Python/Django, Vue.js, real-time systems (WebSocket/Redis), REST APIs, automation, and Linux/Nginx deployment.\n              Designing modular Web & Mobile ERPs for residential fiber-optic operations."],
+        ["Voir les projets","See projects"],
+        ["Me contacter","Get in touch"],
+        ["À propos","About"],
+        ["Développeur full-stack orienté résultats, je construis des produits fiables et performants. Je travaille sur des architectures pragmatiques,\n          des interfaces claires, et des pipelines de données robustes. Mon focus : valeur métier, qualité, maintenabilité, temps réel, et déploiements propres.","Result-driven full-stack developer building reliable, high-performance products. I focus on pragmatic architectures,\n          clear interfaces, and robust data pipelines. Priorities: business value, quality, maintainability, real-time, and clean deployments."],
+        ["Spécialité","Specialty"],
+        ["Temps réel","Real-time"],
+        ["Automatisation","Automation"],
+        ["Infra","Infra"],
+        ["Compétences","Skills"],
+        ["Mises à jour en continu","Continuously updated"],
+        ["Back-end","Back-end"],
+        ["Vue.js (Options/Composition), Vite","Vue.js (Options/Composition), Vite"],
+        ["Interfaces de tableaux riches","Rich data-table interfaces"],
+        ["Filtres, pagination, modales d’édition","Filters, pagination, edit modals"],
+        ["WebSocket client, états temps réel","WebSocket client, real-time states"],
+        ["Ops & Automatisation","Ops & Automation"],
+        ["Monitoring simple, scripts de maintenance","Light monitoring, maintenance scripts"],
+        ["CI légères, bonnes pratiques sécurité","Light CI, security best practices"],
+        ["Projets","Projects"],
+        ["Tous","All"],
+        ["Web","Web"],
+        ["Temps réel","Real-time"],
+        ["ERP Web & Mobile (fibre)","Web & Mobile ERP (fiber)"],
+        ["Système ERP temps réel","Real-time ERP system"],
+        ["Gestion interventions, suivi terrain, facturation, recrutement, inventaire, échanges live.","Intervention management, field tracking, invoicing, recruiting, inventory, live collaboration."],
+        ["Stats & tableaux","Stats & tables"],
+        ["Dashboards comparatifs","Comparative dashboards"],
+        ["OK vs NOK, catégories d’échec, exports Excel avec formats/couleurs.","OK vs NOK, failure categories, Excel exports with formatting/colors."],
+        ["Scraping","Scraping"],
+        ["Collecte Selenium","Selenium collection"],
+        ["Filtres numéros 06/07, tous départements, export Excel structuré.","Phone filters 06/07, all departments, structured Excel export."],
+        ["Expérience","Experience"],
+        ["Candle Call — Développeur logiciels","Candle Call — Software Developer"],
+        ["mars 2025 – aujourd’hui","Mar 2025 – present"],
+        ["Développement d’un ERP Web & Mobile modulaire en temps réel (fibre optique particuliers) : interventions, terrain, facturation, recrutement, inventaire, échanges live.","Developing a modular real-time Web & Mobile ERP (residential fiber): interventions, field ops, invoicing, recruiting, inventory, live collaboration."],
+        ["ubc — Freelance","ubc — Freelance"],
+        ["oct. 2024 – fév. 2025","Oct 2024 – Feb 2025"],
+        ["Scraping Selenium, filtrage numéros 06/07, export Excel (colonne Département).","Selenium scraping, filtering 06/07 numbers, Excel export (Department column)."],
+        ["École Supérieure des Transmissions 1RN","Higher School of Transmissions 1RN"],
+        ["janv. 2023 – sept. 2024","Jan 2023 – Sep 2024"],
+        ["Service national : intégration Odoo, automatisations.","National service: Odoo integration, automations."],
+        ["SGS Béjaïa","SGS Béjaïa"],
+        ["juil. 2022 – sept. 2023","Jul 2022 – Sep 2023"],
+        ["Outils internes, maintenance, automatisations.","Internal tools, maintenance, automations."],
+        ["Contact","Contact"],
+        ["Réponse rapide. Tous les champs sont requis.","Quick response. All fields are required."],
+        ["Nom","Name"],
+        ["E-mail","Email"],
+        ["Sujet","Subject"],
+        ["Message","Message"],
+        ["Envoyer","Send"],
+        ["Ou envoyer via votre boîte mail","Or send via your mailbox"],
+        ["E-mail direct : ","Direct email: "],
+        ["Tous droits réservés.","All rights reserved."]
+      ]);
+
+      // construit la map inverse pour FR
+      const enToFr = new Map(Array.from(frToEn.entries()).map(([fr,en])=>[en,fr]));
+
+      function replaceInTextNode(node, dict){
+        const original = node.nodeValue;
+        const trimmed = original.replace(/\s+/g,' ').trim();
+        if(!trimmed) return;
+        // tente correspondance exacte (avec sauts conservés)
+        for (const [src, dst] of dict.entries()){
+          if (trimmed === src) {
+            const leading = original.match(/^\s*/)[0];
+            const trailing = original.match(/\s*$/)[0];
+            node.nodeValue = leading + dst + trailing;
+            return;
+          }
+        }
+      }
+
+      function walkReplace(root, dict){
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+          acceptNode(node){
+            // ignorer scripts/styles
+            if (node.parentElement && (node.parentElement.tagName === 'SCRIPT' || node.parentElement.tagName === 'STYLE')) return NodeFilter.FILTER_REJECT;
+            // ignorer textes vides
+            if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        });
+        const nodes = [];
+        while(walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach(n=>replaceInTextNode(n, dict));
+      }
+
+      function setMeta(lang){
+        if(lang==='en'){
+          document.title = "Oussama Boumedjmâdjène — Full-Stack Developer (Django • Vue.js)";
+          const m = document.querySelector('meta[name="description"]');
+          if(m) m.setAttribute('content',"Modern, clean and animated portfolio. Full-stack Django/Vue.js developer: real-time, REST APIs, WebSocket, Linux/Nginx deployment, automation.");
+        } else {
+          document.title = "Oussama Boumedjmâdjène — Développeur Full-Stack (Django • Vue.js)";
+          const m = document.querySelector('meta[name="description"]');
+          if(m) m.setAttribute('content',"Portfolio moderne, épuré et animé. Développeur full-stack Django/Vue.js : temps réel, APIs REST, WebSocket, déploiement Linux/Nginx, automatisation.");
+        }
+      }
+
+      function setHtmlLang(lang){
+        document.documentElement.setAttribute('lang', lang);
+      }
+
+      function setLanguage(lang){
+        if(lang==='en'){
+          // part de FR (source) => EN
+          walkReplace(document.body, frToEn);
+        }else{
+          // part d'EN => FR
+          walkReplace(document.body, enToFr);
+        }
+        setMeta(lang);
+        setHtmlLang(lang);
+        localStorage.setItem('portfolio_lang', lang);
+        const btn = document.getElementById('langToggle');
+        if(btn) btn.textContent = (lang==='en' ? 'FR' : 'EN');
+      }
+
+      // init (EN par défaut)
+      document.addEventListener('DOMContentLoaded', function(){
+        const stored = localStorage.getItem('portfolio_lang') || 'en';
+        setLanguage(stored);
+        const btn = document.getElementById('langToggle');
+        if(btn){
+          btn.addEventListener('click', function(){
+            const cur = localStorage.getItem('portfolio_lang') || 'en';
+            setLanguage(cur==='en' ? 'fr' : 'en');
+          });
+        }
+      });
+    })();
+  </script>
+  <!-- ====== FIN AJOUT ====== -->
 
   <script>
-	// Script AJAX pour envoyer le formulaire sans recharger la page
-	document.getElementById("contactForm").addEventListener("submit", function(event) {
-		event.preventDefault();
-	
-		// Création de l'objet FormData avec les données du formulaire
-		var formData = new FormData(this);
-	
-		// Envoi de la requête AJAX
-		fetch("send_email.php", {
-			method: "POST",
-			body: formData
-		})
-		.then(response => response.json())
-		.then(data => {
-			const responseMessage = document.getElementById("responseMessage");
-			responseMessage.textContent = data.message;
-			responseMessage.className = data.status === "success" ? "success" : "error";
-			if (data.status === "success") {
-				document.getElementById("contactForm").reset(); // Réinitialise le formulaire en cas de succès
-			}
-		})
-		.catch(error => {
-			document.getElementById("responseMessage").textContent = "Erreur lors de l'envoi. Veuillez réessayer.voila";
-			document.getElementById("responseMessage").className = "error";
-		});
-	});
-	</script>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  
-  
-  
-  <script src="js/main.js"></script>
-    
-  </body>
+    const root = document.documentElement;
+    const key = 'theme';
+    function setTheme(t){ if(t==='dark'){document.documentElement.classList.add('dark');} else {document.documentElement.classList.remove('dark');} localStorage.setItem(key,t); }
+    function initTheme(){ const t = localStorage.getItem(key) || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); setTheme(t); document.getElementById('sun').classList.toggle('hidden', !(t==='light')); document.getElementById('moon').classList.toggle('hidden', t==='light'); }
+    document.getElementById('themeToggle').addEventListener('click',()=>{ const isDark = document.documentElement.classList.contains('dark'); setTheme(isDark?'light':'dark'); document.getElementById('sun').classList.toggle('hidden', !isDark); document.getElementById('moon').classList.toggle('hidden', isDark); });
+    initTheme();
+
+    document.getElementById('menuBtn').addEventListener('click',()=>{ document.getElementById('mobileNav').classList.toggle('hidden'); });
+
+    const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} })},{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    const filters = document.querySelectorAll('[data-filter]');
+    const cards = document.querySelectorAll('[data-tags]');
+    filters.forEach(btn=>btn.addEventListener('click',()=>{
+      const f = btn.getAttribute('data-filter');
+      filters.forEach(b=>b.classList.remove('bg-brand-600','text-white')); btn.classList.add('bg-brand-600','text-white');
+      cards.forEach(c=>{
+        const tags = c.getAttribute('data-tags').split(',');
+        c.classList.toggle('hidden', !(f==='all' || tags.includes(f)));
+      });
+    }));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    (function(){ try{ emailjs.init('PUBLIC_KEY_A_RENSEIGNER'); }catch(e){} })();
+
+    const form = document.getElementById('contactForm');
+    const toast = document.getElementById('toast');
+    const sendBtn = document.getElementById('sendBtn');
+    const mailFallback = document.getElementById('mailtoFallback');
+
+    function showToast(msg, ok=true){
+      toast.textContent = msg;
+      toast.className = '';
+      toast.classList.add('mt-4','text-sm','px-4','py-3','rounded-xl', ok?'bg-emerald-100':'bg-rose-100', ok?'text-emerald-800':'text-rose-800', ok?'border-emerald-200':'border-rose-200','border');
+    }
+
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      const canSend = (typeof emailjs!=='undefined' && emailjs.send);
+      if(!data.name || !data.email || !data.subject || !data.message){ showToast('Veuillez compléter tous les champs.', false); return; }
+      sendBtn.disabled = true;
+
+      if(canSend){
+        try{
+          const serviceId = 'SERVICE_ID';
+          const templateId = 'TEMPLATE_ID';
+          await emailjs.send(serviceId, templateId, {from_name:data.name, from_email:data.email, subject:data.subject, message:data.message, to_email:'oussama4448@gmail.com'});
+          showToast('Message envoyé avec succès.');
+          form.reset();
+          mailFallback.classList.add('hidden');
+        }catch(err){
+          showToast('Échec de l’envoi. Utilisez le lien mail ci-dessous.', false);
+          mailFallback.classList.remove('hidden');
+          mailFallback.href = `mailto:oussama4448@gmail.com?subject=${encodeURIComponent('[Portfolio] '+data.subject)}&body=${encodeURIComponent('Nom: '+data.name+'\nEmail: '+data.email+'\n\n'+data.message)}`;
+        }finally{
+          sendBtn.disabled = false;
+        }
+      } else {
+        showToast('Service direct non configuré. Utilisez le lien mail ci-dessous.', false);
+        mailFallback.classList.remove('hidden');
+        mailFallback.href = `mailto:oussama4448@gmail.com?subject=${encodeURIComponent('[Portfolio] '+data.subject)}&body=${encodeURIComponent('Nom: '+data.name+'\nEmail: '+data.email+'\n\n'+data.message)}`;
+        sendBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
 </html>
